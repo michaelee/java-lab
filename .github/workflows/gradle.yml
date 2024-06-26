@@ -28,8 +28,25 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Build with javac
-      run: javac IsCandidate.java
+    - name: Test Case 1 - all OK
+      id: test-case-1-all-ok
+      uses: classroom-resources/autograding-io-grader@v1
+      with:
+        test-name: Test Case 1 - all OK
+        setup-command: javac isCandidate.java
+        command: java isCandidate
+        input: 1100 2.5 16
+        expected-output: 'true'
+        comparison-method: exact
+        timeout: 10
+        max-score: 1
+
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TEST-CASE-1-ALL-OK_RESULTS: "${{steps.test-case-1-all-ok.outputs.result}}"
+      with:
+        runners: test-case-1-all-ok
 
   # dependency-submission:
 
