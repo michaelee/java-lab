@@ -6,7 +6,14 @@ public class IsCandidate {
     double gpa=in.nextDouble();
     int age=in.nextInt();
     boolean isCandidate;
-    
+    // add your code here
+    if (satScore>=1100 && gpa>=2.5 && age>15) {
+      isCandidate=true;
+    }
+    else {
+      isCandidate=false; 
+    }
+ 
     System.out.println(isCandidate);
   }
 }
