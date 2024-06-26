@@ -33,8 +33,8 @@ jobs:
       uses: classroom-resources/autograding-io-grader@v1
       with:
         test-name: Test Case 1 - all OK
-        setup-command: javac isCandidate.java
-        command: java isCandidate
+        setup-command: javac IsCandidate.java
+        command: java IsCandidate
         input: 1100 2.5 16
         expected-output: 'true'
         comparison-method: exact
