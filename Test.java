@@ -6,7 +6,6 @@ public class IsCandidate {
     double gpa=in.nextDouble();
     int age=in.nextInt();
     boolean isCandidate;
-    // add your code here
     
     System.out.println(isCandidate);
   }
